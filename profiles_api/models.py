@@ -9,9 +9,9 @@ class UserProfileManager(BaseUserManager):
             return ValueError('User must have an email address')
 
         email = self.normalize_email(email)
-        user = self.moadal(email = email,name= name)
+        user = self.model(email = email,name = name)
 
-        user.setpassword(password)
+        user.set_password(password)
         user.save()
 
         return user
